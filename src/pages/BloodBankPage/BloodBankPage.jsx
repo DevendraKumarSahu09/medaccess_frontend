@@ -15,7 +15,7 @@ const BloodBankPage = () => {
     const fetchBlood = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('http://localhost:5000/api/users/bloodbank');
+        const response = await axios.get('https://medaccess-backend.onrender.com/api/users/bloodbank');
         setBloodData(response.data);
         setError(null);
       } catch (error) {

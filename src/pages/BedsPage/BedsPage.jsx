@@ -10,7 +10,7 @@ const BedsPage = () => {
     // Fetch data from the backend API using fetch
     useEffect(() => {
         // Fetch bed data from the API endpoint
-        fetch('http://localhost:5000/api/beds/bedspage', {
+        fetch('https://medaccess-backend.onrender.com/api/beds/bedspage', {
             method: 'GET', // GET request to fetch data
         })
             .then((response) => response.json()) // Parse response as JSON

@@ -20,7 +20,7 @@ const HospitalDoctorsPage = () => {
         setLoading(true);
         
         // Fetch hospitals - use public endpoint
-        const hospitalsResponse = await fetch('http://localhost:5000/api/dashboard/public/hospitals');
+        const hospitalsResponse = await fetch('https://medaccess-backend.onrender.com/api/dashboard/public/hospitals');
         if (!hospitalsResponse.ok) {
           throw new Error('Failed to fetch hospitals');
         }
@@ -28,7 +28,7 @@ const HospitalDoctorsPage = () => {
         setHospitals(hospitalsData);
         
         // Fetch doctors - use public endpoint
-        const doctorsResponse = await fetch('http://localhost:5000/api/dashboard/public/doctors');
+        const doctorsResponse = await fetch('https://medaccess-backend.onrender.com/api/dashboard/public/doctors');
         if (!doctorsResponse.ok) {
           throw new Error('Failed to fetch doctors');
         }

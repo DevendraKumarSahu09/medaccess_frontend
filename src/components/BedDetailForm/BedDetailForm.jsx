@@ -51,7 +51,7 @@ const BedDetailForm = () => {
             return;
         }
 
-        const apiUrl = editingBed ? `http://localhost:5000/api/beds/${editingBed._id}` : 'http://localhost:5000/api/beds/add';
+        const apiUrl = editingBed ? `https://medaccess-backend.onrender.com/api/beds/${editingBed._id}` : 'https://medaccess-backend.onrender.com/api/beds/add';
         const method = editingBed ? 'put' : 'post';
 
         axios[method](apiUrl, dataToSend, {

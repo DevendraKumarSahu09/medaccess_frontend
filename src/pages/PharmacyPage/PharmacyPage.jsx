@@ -17,7 +17,7 @@ const PharmacyPage = () => {
       try {
         setLoading(true);
         // Updated endpoint to use public route
-        const response = await fetch('http://localhost:5000/api/dashboard/public/pharmacies');
+        const response = await fetch('https://medaccess-backend.onrender.com/api/dashboard/public/pharmacies');
         if (!response.ok) {
           throw new Error('Failed to fetch pharmacy data');
         }
@@ -67,7 +67,7 @@ const PharmacyPage = () => {
       try {
         setMedicationsLoading(true);
         // Updated endpoint to use public route
-        const response = await fetch(`http://localhost:5000/api/dashboard/public/pharmacies/${selectedPharmacy._id}/medications`);
+        const response = await fetch(`https://medaccess-backend.onrender.com/api/dashboard/public/pharmacies/${selectedPharmacy._id}/medications`);
         if (!response.ok) {
           throw new Error('Failed to fetch medications');
         }

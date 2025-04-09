@@ -56,7 +56,7 @@ const Pharmacy = () => {
         
         try {
           // Fetch pharmacy data
-          const pharmacyResponse = await axios.get('http://localhost:5000/api/pharmacy', config);
+          const pharmacyResponse = await axios.get('https://medaccess-backend.onrender.com/api/pharmacy', config);
           
           if (pharmacyResponse.data.success) {
             setPharmacy(pharmacyResponse.data.data);
@@ -72,7 +72,7 @@ const Pharmacy = () => {
           }
           
           // Fetch medications
-          const medicationsResponse = await axios.get('http://localhost:5000/api/pharmacy/medications', config);
+          const medicationsResponse = await axios.get('https://medaccess-backend.onrender.com/api/pharmacy/medications', config);
           
           if (medicationsResponse.data.success) {
             setMedications(medicationsResponse.data.data || []);
@@ -161,7 +161,7 @@ const Pharmacy = () => {
       console.log("Form data:", formData);
       
       const response = await axios.post(
-        'http://localhost:5000/api/pharmacy/create',
+        'https://medaccess-backend.onrender.com/api/pharmacy/create',
         formData,
         config
       );
@@ -206,14 +206,14 @@ const Pharmacy = () => {
       if (currentMedication) {
         // Update existing medication
         response = await axios.put(
-          `http://localhost:5000/api/pharmacy/medications/${currentMedication._id}`,
+          `https://medaccess-backend.onrender.com/api/pharmacy/medications/${currentMedication._id}`,
           medicationData,
           config
         );
       } else {
         // Add new medication
         response = await axios.post(
-          'http://localhost:5000/api/pharmacy/medications/add',
+          'https://medaccess-backend.onrender.com/api/pharmacy/medications/add',
           medicationData,
           config
         );
@@ -222,7 +222,7 @@ const Pharmacy = () => {
       if (response.data.success) {
         // Refresh medications list
         const medicationsResponse = await axios.get(
-          'http://localhost:5000/api/pharmacy/medications',
+          'https://medaccess-backend.onrender.com/api/pharmacy/medications',
           config
         );
         
@@ -274,7 +274,7 @@ const Pharmacy = () => {
       };
       
       const response = await axios.delete(
-        `http://localhost:5000/api/pharmacy/medications/${id}`,
+        `https://medaccess-backend.onrender.com/api/pharmacy/medications/${id}`,
         config
       );
       

@@ -43,7 +43,7 @@ const BloodBank = () => {
           return;
         }
 
-        const response = await axios.get('http://localhost:5000/api/dashboard/blood-inventory', {
+        const response = await axios.get('https://medaccess-backend.onrender.com/api/dashboard/blood-inventory', {
           headers: {
             'Authorization': `Bearer ${token}`
           }

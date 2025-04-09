@@ -48,7 +48,7 @@ const ProfilePage = ({ user, setIsLoggedIn }) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.put('http://localhost:5000/api/users/profile', formData, {
+      await axios.put('https://medaccess-backend.onrender.com/api/users/profile', formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert('Profile updated successfully!');

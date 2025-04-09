@@ -88,7 +88,7 @@ const HospitalSignUp = () => {
 
         try {
             setIsLoading(true);
-            const response = await fetch('http://localhost:5000/api/auth/hospital/register', {
+            const response = await fetch('https://medaccess-backend.onrender.com/api/auth/hospital/register', {
                 method: 'POST',
                 body: hospitalFormData,
             });

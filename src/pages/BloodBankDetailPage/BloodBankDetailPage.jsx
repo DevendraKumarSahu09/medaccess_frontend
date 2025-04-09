@@ -13,7 +13,7 @@ const BloodBankDetailPage = () => {
         const fetchHospitalData = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:5000/api/blood-bank/${bloodGroup}`);
+                const response = await axios.get(`https://medaccess-backend.onrender.com/api/blood-bank/${bloodGroup}`);
                 setHospitalData(response.data);
             } catch (error) {
                 console.error('Error fetching hospital data:', error);

@@ -12,7 +12,7 @@ const DoctorsTable = () => {
     useEffect(() => {
         const fetchDoctors = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/hospitaldoctors',{
+                const response = await axios.get('https://medaccess-backend.onrender.com/api/hospitaldoctors',{
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`  // Include the JWT token in the header
                     }
@@ -30,7 +30,7 @@ const DoctorsTable = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/hospitaldoctors/${id}`,{
+            await axios.delete(`https://medaccess-backend.onrender.com/api/hospitaldoctors/${id}`,{
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`  // Authorization header
                 }

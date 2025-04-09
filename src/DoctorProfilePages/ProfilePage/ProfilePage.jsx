@@ -47,7 +47,7 @@ const ProfilePage = () => {
     // Fetch doctor profile data when the component mounts
     const fetchDoctorData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/auth/doctor/profile`, {
+        const response = await fetch(`https://medaccess-backend.onrender.com/api/auth/doctor/profile`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,  // Send token in headers
@@ -254,7 +254,7 @@ const ProfilePage = () => {
         
         console.log("Sending form data with keys:", Array.from(formDataToSend.keys()));
         try {
-          response = await fetch(`http://localhost:5000/api/auth/doctor/update/${userId}`, {
+          response = await fetch(`https://medaccess-backend.onrender.com/api/auth/doctor/update/${userId}`, {
             method: 'PUT',
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -269,7 +269,7 @@ const ProfilePage = () => {
         console.log("Sending JSON data:", dataToSend);
         // Use JSON if no file
         try {
-          response = await fetch(`http://localhost:5000/api/auth/doctor/update/${userId}`, {
+          response = await fetch(`https://medaccess-backend.onrender.com/api/auth/doctor/update/${userId}`, {
             method: 'PUT',
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('token')}`,

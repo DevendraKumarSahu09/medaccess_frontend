@@ -33,7 +33,7 @@ const HospitalDoctors = () => {
     const fetchDoctors = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/hospitaldoctors', {
+      const response = await axios.get('https://medaccess-backend.onrender.com/api/hospitaldoctors', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -132,7 +132,7 @@ const HospitalDoctors = () => {
         if (editingDoctorId) {
           // Update existing doctor
           response = await axios.put(
-            `http://localhost:5000/api/hospitaldoctors/${editingDoctorId}`,
+            `https://medaccess-backend.onrender.com/api/hospitaldoctors/${editingDoctorId}`,
             formDataToSend,
             {
               headers: {
@@ -148,7 +148,7 @@ const HospitalDoctors = () => {
         } else {
           // Add new doctor
           response = await axios.post(
-            'http://localhost:5000/api/hospitaldoctors/addhdoctor',
+            'https://medaccess-backend.onrender.com/api/hospitaldoctors/addhdoctor',
             formDataToSend,
             {
               headers: {
@@ -197,7 +197,7 @@ const HospitalDoctors = () => {
     if (window.confirm('Are you sure you want to delete this doctor?')) {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/hospitaldoctors/${id}`, {
+      await axios.delete(`https://medaccess-backend.onrender.com/api/hospitaldoctors/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

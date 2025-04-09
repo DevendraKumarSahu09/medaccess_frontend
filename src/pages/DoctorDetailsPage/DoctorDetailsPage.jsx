@@ -24,7 +24,7 @@ const DoctorDetailsPage = () => {
         const fetchDoctorDetails = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:5000/api/users/doctors/${id}`);
+                const response = await axios.get(`https://medaccess-backend.onrender.com/api/users/doctors/${id}`);
                 setDoctor(response.data);
                 setError(null);
             } catch (error) {

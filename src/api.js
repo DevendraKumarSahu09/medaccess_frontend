@@ -1,7 +1,7 @@
 import axios from "axios";
 const axiosInstance = axios.create();
 
-const serverUrl = process.env.REACT_APP_SERVER || "http://localhost:5000";
+const serverUrl = import.meta.env.VITE_API_URL || "https://medaccess-backend.onrender.com";
 const baseUrl = `${serverUrl}/api`;
 
 axios.interceptors.request.use(

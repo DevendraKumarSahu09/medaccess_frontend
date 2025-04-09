@@ -10,7 +10,7 @@ const HospitalBedsTable = () => {
 
     useEffect(() => {
         // Fetch all bed details from the backend
-        axios.get('http://localhost:5000/api/beds', {
+        axios.get('https://medaccess-backend.onrender.com/api/beds', {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`  // Include the JWT token in the header
             }
@@ -25,7 +25,7 @@ const HospitalBedsTable = () => {
 
     const handleDelete = (id) => {
         // Delete bed
-        axios.delete(`http://localhost:5000/api/beds/${id}`, {
+        axios.delete(`https://medaccess-backend.onrender.com/api/beds/${id}`, {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`  // Authorization header
             }

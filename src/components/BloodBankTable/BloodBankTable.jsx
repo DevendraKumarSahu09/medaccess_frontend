@@ -14,7 +14,7 @@ const BloodBankTable = () => {
 
     const fetchBloodGroups = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/blood-bank/", {
+            const response = await axios.get("https://medaccess-backend.onrender.com/api/blood-bank/", {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
             });
 
@@ -43,7 +43,7 @@ const BloodBankTable = () => {
 
         try {
             const response = await axios.put(
-                "http://localhost:5000/api/blood-bank/update",
+                "https://medaccess-backend.onrender.com/api/blood-bank/update",
                 { bloodGroup, unitsAvailable: value },
                 { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
             );

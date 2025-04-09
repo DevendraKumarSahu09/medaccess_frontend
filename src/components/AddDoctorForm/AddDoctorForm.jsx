@@ -88,7 +88,7 @@ const AddDoctorForm = () => {
                 return;
             }
 
-            const apiUrl = editingHdoctor ? `http://localhost:5000/api/hospitaldoctors/${editingHdoctor._id}` : 'http://localhost:5000/api/hospitaldoctors/addhdoctor';
+            const apiUrl = editingHdoctor ? `https://medaccess-backend.onrender.com/api/hospitaldoctors/${editingHdoctor._id}` : 'https://medaccess-backend.onrender.com/api/hospitaldoctors/addhdoctor';
             const method = editingHdoctor ? 'put' : 'post';
 
             axios[method](apiUrl, formDataToSend, {

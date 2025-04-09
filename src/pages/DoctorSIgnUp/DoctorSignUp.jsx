@@ -91,7 +91,7 @@ const DoctorSignUp = () => {
                 console.log(pair[0] + ': ' + pair[1]);
             }
             
-            const response = await fetch('http://localhost:5000/api/auth/doctor/register', {
+            const response = await fetch('https://medaccess-backend.onrender.com/api/auth/doctor/register', {
                 method: 'POST',
                 body: doctorFormData,
                 // Don't set Content-Type header - browser will set it with boundary

@@ -10,7 +10,7 @@ const HospitalsPage = () => {
   useEffect(() => {
     const fetchHospitals = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/users/hospitals');
+        const response = await axios.get('https://medaccess-backend.onrender.com/api/users/hospitals');
         setHospitals(response.data);
       } catch (error) {
         console.error('Error fetching hospitals:', error);

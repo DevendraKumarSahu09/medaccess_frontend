@@ -22,7 +22,7 @@ const UserLayout = ({ children }) => {
             }
 
             try {
-                const response = await axios.get('http://localhost:5000/api/users/profile', {
+                const response = await axios.get('https://medaccess-backend.onrender.com/api/users/profile', {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setUser(response.data);

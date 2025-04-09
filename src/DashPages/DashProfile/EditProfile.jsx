@@ -24,7 +24,7 @@ const EditProfile = () => {
     const [newSpecialization, setNewSpecialization] = useState('');
     const [newFacility, setNewFacility] = useState('');
 
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    const API_URL = import.meta.env.VITE_API_URL || 'https://medaccess-backend.onrender.com';
 
     useEffect(() => {
         const token = localStorage.getItem('token');

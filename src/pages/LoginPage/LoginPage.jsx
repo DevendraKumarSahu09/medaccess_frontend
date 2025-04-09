@@ -32,7 +32,7 @@ const LoginPage = ({ setIsLoggedIn, setUserType }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const response = await axios.post('https://medaccess-backend.onrender.com/api/auth/login', formData);
       
       // Store the token directly
       localStorage.setItem('token', response.data.token);
@@ -196,7 +196,7 @@ export default LoginPage;
 //     e.preventDefault();
 //     setLoading(true);
 //     try {
-//       const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+//       const response = await axios.post('https://medaccess-backend.onrender.com/api/auth/login', formData);
 //       localStorage.setItem('token', response.data.token);
 //       navigate(formData.userType === 'doctor' ? '/profile' : '/dashboard');
 //     } catch (error) {

@@ -12,7 +12,7 @@ const DoctorProfilePage = () => {
   useEffect(() => {
     const fetchDoctor = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/doctors/${id}`);
+        const response = await axios.get(`https://medaccess-backend.onrender.com/api/doctors/${id}`);
         setDoctor(response.data);
       } catch (error) {
         console.error('Error fetching doctor data:', error);

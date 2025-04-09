@@ -34,7 +34,7 @@ const Beds = () => {
           return;
         }
 
-        const response = await axios.get('http://localhost:5000/api/beds', {
+        const response = await axios.get('https://medaccess-backend.onrender.com/api/beds', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -152,7 +152,7 @@ const Beds = () => {
       
       if (editingId) {
         // Update existing bed
-        response = await axios.put(`http://localhost:5000/api/beds/${editingId}`, bedData, {
+        response = await axios.put(`https://medaccess-backend.onrender.com/api/beds/${editingId}`, bedData, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -163,7 +163,7 @@ const Beds = () => {
         ));
       } else {
         // Add new bed
-        response = await axios.post('http://localhost:5000/api/beds/add', bedData, {
+        response = await axios.post('https://medaccess-backend.onrender.com/api/beds/add', bedData, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -192,7 +192,7 @@ const Beds = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:5000/api/beds/${id}`, {
+      await axios.delete(`https://medaccess-backend.onrender.com/api/beds/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
