@@ -1,0 +1,104 @@
+/* ProfilePage.css */
+.edit-profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    margin-bottom: 15px;
+}
+
+.profile-photo-preview {
+    max-width: 100px;
+    margin-top: 10px;
+}
+
+.days-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.day-checkbox {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+.day-checkbox:hover {
+    background-color: #e9e9e9;
+}
+
+.day-checkbox input {
+    margin-right: 6px;
+}
+
+/* Style for checked items */
+.day-checkbox input:checked + span {
+    font-weight: 500;
+    color: #0056b3;
+}
+
+/* Add after the existing days checkbox styles */
+.days-selection-info {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.days-selection-footer {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.selected-days {
+    color: #2c7be5;
+}
+
+.days-warning {
+    color: #dc3545;
+    font-style: italic;
+}

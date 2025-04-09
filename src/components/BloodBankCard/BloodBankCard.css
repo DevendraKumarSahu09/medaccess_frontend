@@ -1,0 +1,284 @@
+/* BloodBankCard.css */
+.blood-card {
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    height: 100%;
+    background: white;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.06),
+        0 1px 3px rgba(0, 0, 0, 0.03);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transform-style: preserve-3d;
+}
+
+.blood-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #100078, #014e85);
+}
+
+.blood-card::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(16, 0, 120, 0.04), transparent);
+    z-index: 0;
+}
+
+.blood-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow:
+        0 25px 35px rgba(0, 0, 0, 0.1),
+        0 10px 15px rgba(0, 0, 0, 0.04);
+}
+
+.blood-group {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #100078;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.08);
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.blood-card:hover .blood-group {
+    transform: scale(1.1);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+.blood-group::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #100078, #014e85);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.blood-card:hover .blood-group::after {
+    width: 80px;
+}
+
+.available-units {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: rgba(16, 0, 120, 0.06);
+    border-radius: 16px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.blood-card:hover .available-units {
+    background-color: rgba(16, 0, 120, 0.09);
+    transform: translateY(-5px);
+}
+
+.last-updated {
+    font-size: 0.95rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+    font-style: italic;
+    z-index: 1;
+    position: relative;
+}
+
+.request-button {
+    background: linear-gradient(135deg, #100078, #014e85);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(16, 0, 120, 0.2);
+    z-index: 1;
+    margin: 0 auto;
+}
+
+.request-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: 0.6s ease;
+}
+
+.request-button:hover {
+    background: linear-gradient(135deg, #014e85, #100078);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(16, 0, 120, 0.3);
+}
+
+.request-button:hover::before {
+    left: 100%;
+}
+
+.request-button:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 0, 120, 0.2);
+}
+
+/* Blood Group Badge with Pulse Effect */
+.blood-group::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: rgba(16, 0, 120, 0.06);
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.blood-card:hover .blood-group::before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .blood-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .blood-group {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .blood-card {
+        padding: 2rem 1.5rem;
+        max-width: 100%;
+    }
+
+    .blood-group {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .available-units {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+        margin: 1.2rem 0;
+    }
+
+    .request-button {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blood-card {
+        padding: 1.8rem 1.2rem;
+    }
+
+    .blood-group {
+        font-size: 2.2rem;
+    }
+
+    .available-units {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+
+    .request-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+.blood-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.blood-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.blood-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.blood-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.blood-card:nth-child(n+5) {
+    animation-delay: 0.4s;
+}
