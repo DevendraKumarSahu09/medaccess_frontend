@@ -8,7 +8,7 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import ContactPage from './pages/ContactPage/ContactPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import SignupPage from './pages/SignupPage/SignupPage';
-import HomePage from './pages/HomePage/Homepage';
+import HomePage from './pages/Homepage/Homepage';
 import DoctorsPage from './pages/DoctorsPage/DoctorsPage';
 import HospitalsPage from './pages/HospitalsPage/HospitalsPage';
 
